@@ -39,7 +39,7 @@ public class DancingPendulums extends Application {
         // - Change the speed. 
         // - Add a timer to show the current running time. 
         root.getChildren().add(canvas);
-        root.setBackground(Background.fill(Color.BLUE));
+        root.setBackground(Background.fill(Color.BLACK));
         renderer = new RenderingController(root);
         renderer.render(canvas);
         canvas.widthProperty().bind(primaryStage.widthProperty());

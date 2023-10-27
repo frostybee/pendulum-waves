@@ -19,6 +19,7 @@ public class Bob {
 
     public void draw(GraphicsContext gc, int ox, int oy, double scale) {
         gc.setFill(color);
+        gc.setStroke(Color.BLACK);
         gc.fillOval(ox + (int) ((x - diameter / 2) * scale),
                 oy + (int) ((y - diameter / 2) * scale),
                 (int) (diameter * scale), (int) (diameter * scale));

@@ -23,7 +23,7 @@ public class Pendulum {
 
     public void draw(GraphicsContext gc, int originX, int originY, double scale) {
         gc.setFill(Color.YELLOW);
-        gc.setStroke(Color.BLACK);
+        gc.setStroke(Color.GREY);
         gc.strokeLine(originX, originY, originX + (int) (bob.getX() * scale), originY + (int) (bob.getY() * scale));
         bob.draw(gc, originX, originY, scale);
     }
