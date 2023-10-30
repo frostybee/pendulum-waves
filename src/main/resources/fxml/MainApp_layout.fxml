@@ -15,56 +15,62 @@
     <top>
         <HBox prefHeight="22.0" prefWidth="600.0" BorderPane.alignment="TOP_CENTER">
             <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                      <Label alignment="CENTER_RIGHT" text="Pendulums Waves Simulation">
-                          <font>
-                              <Font size="14.0" />
-                          </font>
-                      </Label>
-               </children>
-               <HBox.margin>
-                  <Insets left="100.0" />
-               </HBox.margin>
-            </HBox>
+                <HBox alignment="CENTER" prefHeight="27.0" prefWidth="445.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="307.0" text="Pendulums Waves Simulation">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="100.0" />
+                    </HBox.margin>
+                </HBox>
             </children>
-         <padding>
-            <Insets bottom="5.0" top="5.0" />
-         </padding>
+            <padding>
+                <Insets bottom="5.0" top="5.0" />
+            </padding>
         </HBox>
     </top>
     <center>
         <Pane id="animationPanel" fx:id="animationPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
     </center>
     <right>
-        <VBox fx:id="vbSettings" depthTest="DISABLE" prefHeight="370.0" prefWidth="165.0" spacing="3.0" BorderPane.alignment="CENTER">
+        <VBox fx:id="vbSettings" depthTest="DISABLE" prefHeight="370.0" prefWidth="165.0" spacing="5.0" BorderPane.alignment="CENTER">
             <children>
-            <Label text="Pendulums number:" />
+                <Label text="Pendulums number:" />
                 <Spinner fx:id="spPendulumsNumber" editable="false">
+                    <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="25" min="10" />
+                    </valueFactory>
+                </Spinner>
+                <Label text="Bob diameter:" />
+                <Spinner fx:id="spBobDiameter">
                     <valueFactory>
                         <SpinnerValueFactory.IntegerSpinnerValueFactory max="100" min="15" />
                     </valueFactory>
                 </Spinner>
-            <HBox prefHeight="46.0" prefWidth="114.0" spacing="5.0">
-               <children>
-                  <Button fx:id="btnStart" alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Start" />
-                      <Button fx:id="btnStop" alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Stop" />
-                  <Button fx:id="btnReset" mnemonicParsing="false" text="Reset" />
-               </children>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </HBox>
+                <HBox prefHeight="46.0" prefWidth="114.0" spacing="5.0">
+                    <children>
+                        <Button fx:id="btnStart" alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Start" />
+                        <Button fx:id="btnStop" alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Stop" />
+                        <Button fx:id="btnReset" mnemonicParsing="false" text="Reset" />
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </HBox>
             </children>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-         <BorderPane.margin>
-            <Insets left="5.0" right="5.0" />
-         </BorderPane.margin>
-         <opaqueInsets>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </opaqueInsets>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <BorderPane.margin>
+                <Insets left="5.0" right="5.0" />
+            </BorderPane.margin>
+            <opaqueInsets>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </opaqueInsets>
         </VBox>
     </right>
 </BorderPane>

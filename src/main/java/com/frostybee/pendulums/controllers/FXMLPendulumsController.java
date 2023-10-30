@@ -19,6 +19,9 @@ public class FXMLPendulumsController {
     @FXML
     private Spinner spPendulumsNumber;
     @FXML
+    private Spinner spBobDiameter;
+
+    @FXML
     private VBox vbSettings;
     @FXML
     Button btnStart;
@@ -42,7 +45,7 @@ public class FXMLPendulumsController {
     private void configControls() {
         vbSettings.setStyle(
                 "-fx-border-color:#424242; -fx-border-width:1px;-fx-background-color:rgba(255, 255, 255, 0.87);");
-        animationPane.setStyle("-fx-border-color:#424242; -fx-border-width:1px;-fx-background-color:rgba(5, 5, 5, 0.87);");
+        animationPane.setStyle("-fx-border-color:#424242; -fx-border-width:1px;-fx-background-color:rgba(5, 5, 5, 0.97);");
         btnStop.setDisable(true);
         btnReset.setDisable(true);
         btnStart.setOnAction((event) -> {
@@ -59,6 +62,10 @@ public class FXMLPendulumsController {
         spPendulumsNumber.valueProperty().addListener((observable, oldValue, newValue) -> {
             renderer.setNumberOfPendulums(Integer.parseInt(newValue.toString()));
         });
+        spBobDiameter.valueProperty().addListener((observable, oldValue, newValue) -> {
+            renderer.setBobDiameter(Integer.parseInt(newValue.toString()));
+        });
+
     }
 
     private void disableSimulationButtons(boolean start, boolean stop, boolean reset) {
@@ -67,7 +74,7 @@ public class FXMLPendulumsController {
         btnReset.setDisable(reset);
     }
 
-    void stopAnimation() {
+    public void stopAnimation() {
         renderer.stopAnimation();
     }
 

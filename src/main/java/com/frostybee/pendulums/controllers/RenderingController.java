@@ -13,6 +13,7 @@ import javafx.scene.paint.Color;
  * @author frostybee
  */
 public final class RenderingController {
+
     private final List<Pendulum> pendulums;
     private final List<Color> bobColors;
     private AnimationTimer timer;
@@ -27,12 +28,12 @@ public final class RenderingController {
     private final int frequency = 25; // frequency of the longest pendulum
     private final double maxLength = 450; // length of the longest pendulum
     private final double theta = -Math.PI / 8; // initial vertical angle
-    private final double bobDiameter = 10; // diameter of each bob
+    private int bobDiameter = 10; // diameter of each bob
 
     // Origin coordinates where the pivots of the pendulums will be drawn.
     private int originX = 200;
     private int originY = -250;
-    private Canvas canvas;
+    private final Canvas canvas;
 
     // originY is negative so that more pendulum bobs can be actually drawn inside the panel.
     // We are not interested in seeing the suspension point and the strings(the physics ones).
@@ -104,6 +105,10 @@ public final class RenderingController {
 
     public void setNumberOfPendulums(int numberOfPendulums) {
         this.numberOfPendulums = numberOfPendulums;
+    }
+
+    void setBobDiameter(int newDiameter) {
+        this.bobDiameter = newDiameter;
     }
 
 }

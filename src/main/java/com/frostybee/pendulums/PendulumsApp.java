@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 
 public class PendulumsApp extends Application {
 
+    FXMLPendulumsController controller;
+
     @Override
     public void start(Stage primaryStage) {
         try {
@@ -17,7 +19,8 @@ public class PendulumsApp extends Application {
             //-- 1) Load the scene graph from the specified FXML file and 
             // associate it with its FXML controller.
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainApp_layout.fxml"));
-            loader.setController(new FXMLPendulumsController());
+            controller = new FXMLPendulumsController();
+            loader.setController(controller);
             Pane root = loader.load();
             //-- 2) Create and set the scene to the stage.
             Scene scene = new Scene(root, 1000, 900);
@@ -29,6 +32,12 @@ public class PendulumsApp extends Application {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+        controller.stopAnimation();
     }
 
     public static void main(String[] args) {
