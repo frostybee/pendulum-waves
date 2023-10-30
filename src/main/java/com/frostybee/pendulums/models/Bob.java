@@ -1,4 +1,4 @@
-package org.frostybee.pendulums;
+package com.frostybee.pendulums.models;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
