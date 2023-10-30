@@ -42,13 +42,13 @@
                 <Label text="Pendulums number:" />
                 <Spinner fx:id="spPendulumsNumber" editable="false">
                     <valueFactory>
-                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="25" min="10" />
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="100" min="15" />
                     </valueFactory>
                 </Spinner>
                 <Label text="Bob diameter:" />
                 <Spinner fx:id="spBobDiameter">
                     <valueFactory>
-                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="100" min="15" />
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="30" min="15" />
                     </valueFactory>
                 </Spinner>
                 <HBox prefHeight="46.0" prefWidth="114.0" spacing="5.0">

@@ -28,7 +28,7 @@ public final class RenderingController {
     private final int frequency = 25; // frequency of the longest pendulum
     private final double maxLength = 450; // length of the longest pendulum
     private final double theta = -Math.PI / 8; // initial vertical angle
-    private int bobDiameter = 10; // diameter of each bob
+    private int bobDiameter = 15; // diameter of each bob
 
     // Origin coordinates where the pivots of the pendulums will be drawn.
     private int originX = 200;
@@ -80,11 +80,9 @@ public final class RenderingController {
                 if (now - lastUpdate >= 25000000) {
                     lastUpdate = now;
                     clearCanvas(gc);
-                    for (Pendulum p : pendulums) {
-                        p.update(gravity, deltaTime);
-                        for (Pendulum pendulum : pendulums) {
-                            pendulum.draw(gc, originX, originY, scale);
-                        }
+                    for (Pendulum pendulum : pendulums) {
+                        pendulum.update(gravity, deltaTime);
+                        pendulum.draw(gc, originX, originY, scale);
                     }
                 }
             }
